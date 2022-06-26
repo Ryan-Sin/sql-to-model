@@ -25,19 +25,19 @@ import {
 export class {{this.entityName}}Entity extends BaseEntity {
 {{#each columnInfoList}}
   {{#if this.autoIncrement}} 
-  @PrimaryGeneratedColumn({name: '{{this.columnName}}'})
-  {{this.variableName}} : {{this.variableType}};
+  @PrimaryGeneratedColumn({name: '{{{this.columnName}}}'})
+  {{{this.variableName}}} : {{{this.variableType}}};
   {{else}}
   {{#if this.primary}} @PrimaryColumn() {{/if}}
   {{#checkColunm this}}
   {{{this.columnDecorator}}}({
-    name: '{{this.columnName}}',
-    type: '{{this.columnType}}',
+    name: '{{{this.columnName}}}',
+    type: '{{{this.columnType}}}',
     nullable: {{this.nullabel}},
-    default: '{{this.defaultValue}}',
+    default: '{{{this.defaultValue}}}',
     comment: {{{this.comment}}}, 
   })
-  {{this.variableName}} : {{this.variableType}};
+  {{{this.variableName}}} : {{{this.variableType}}};
   {{/checkColunm}}
   {{/if}}
 
