@@ -22,7 +22,7 @@ import {
 @Unique({{{this}}}) 
 {{/each}}
 {{/if}}
-export class {{this.entityName}}Entity extends BaseEntity {
+export class {{this.entityClassName}}Entity extends BaseEntity {
 {{#each columnInfoList}}
   {{#if this.autoIncrement}} 
   @PrimaryGeneratedColumn({name: '{{{this.columnName}}}'})
@@ -34,10 +34,10 @@ export class {{this.entityName}}Entity extends BaseEntity {
     name: '{{{this.columnName}}}',
     type: '{{{this.columnType}}}',
     nullable: {{this.nullabel}},
-    default: '{{{this.defaultValue}}}',
-    comment: {{{this.comment}}}, 
+    default: {{{this.defaultValue}}},
+    comment:{{{this.comment}}}, 
   })
-  {{{this.variableName}}} : {{{this.variableType}}};
+  {{{this.variableName}}}: {{{this.variableType}}};
   {{/checkColunm}}
   {{/if}}
 
