@@ -26,9 +26,9 @@ export class {{this.entityClassName}}Entity extends BaseEntity {
 {{#each columnInfoList}}
   {{#if this.autoIncrement}} 
   @PrimaryGeneratedColumn({name: '{{{this.columnName}}}'})
-  {{{this.variableName}}} : {{{this.variableType}}};
+  {{{this.variableName}}}: {{{this.variableType}}};
   {{else}}
-  {{#if this.primary}} @PrimaryColumn() {{/if}}
+  {{#if this.primary}}@PrimaryColumn();{{/if}}
   {{#checkColunm this}}
   {{{this.columnDecorator}}}({
     name: '{{{this.columnName}}}',
@@ -40,6 +40,5 @@ export class {{this.entityClassName}}Entity extends BaseEntity {
   {{{this.variableName}}}: {{{this.variableType}}};
   {{/checkColunm}}
   {{/if}}
-
 {{/each}}
 }
