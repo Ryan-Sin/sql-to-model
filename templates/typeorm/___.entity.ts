@@ -28,7 +28,7 @@ export class {{this.entityClassName}}Entity extends BaseEntity {
   @PrimaryGeneratedColumn({name: '{{{this.columnName}}}'})
   {{{this.variableName}}}: {{{this.variableType}}};
   {{else}}
-  {{#if this.primary}}@PrimaryColumn();{{/if}}
+  {{#if this.primary}}@PrimaryColumn(){{/if}}
   {{#checkColunm this}}
   {{{this.columnDecorator}}}({
     name: '{{{this.columnName}}}',

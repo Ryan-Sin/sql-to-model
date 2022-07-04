@@ -52,7 +52,7 @@ $ model-generate -s [*.sql] -t [target directory] -m [model type] -d [database]
 ```bash
 #Options
 options :
-  -s, --swagger_file <swagger_file> (Swagger Yaml file to reference)
+  -s, --sqlDir <sqlDir> (.sql File Target directory to reference)
   -t, --targetDir <targetDir> (Name of the project you want to create)
   -m, --modelType <modelType> (TypeORM, Sequelize || default option: TypeORM)
   -d, --database <database> (MySql, MariaDB, Postgresql.. || default option: MySql)
